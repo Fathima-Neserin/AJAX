@@ -49,3 +49,20 @@ postData.addEventListener("click", () => {
     console.log("Post request successful");
     
 })
+
+let fetchBtn = document.getElementById("fetchBtn");
+
+fetchBtn.addEventListener("click", () => {
+    // console.log("HIIIIIIIIIIIIIIIIII");
+   
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "Nezrin.txt", true)
+    xhr.onreadystatechange = function(){
+        console.log("Ready State "+ xhr.readyState);
+    }
+    xhr.onload = function(){
+        console.log(this.responseText);
+    }
+    xhr.send();
+});
+
